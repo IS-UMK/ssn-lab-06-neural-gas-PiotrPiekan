@@ -58,7 +58,7 @@ def vectors_to_image(vectors, img_shape, patch_size):
     i=0
     for y in range(0, img_height, patch_size[0]):
         for x in range(0, img_width, patch_size[1]):
-            restored[y:y+patch_size[0], x:x+patch_size[1], :] = vectors[i].reshape((patch_size[0], patch_size[1], 3))
+            restored[y:y+patch_size[0], x:x+patch_size[1], :] = vectors[i].reshape((patch_size[0], patch_size[1], img_shape[2]))
             i = i + 1
 
     return restored[:img_height, :img_width]
